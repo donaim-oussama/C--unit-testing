@@ -105,7 +105,7 @@ namespace CaclulatorDemo
             txtDisplay.Text += (sender as Button).Text;
         }
 
-        private void PerformCalculation(Operation previousOperation)
+        public void PerformCalculation(Operation previousOperation)
         {
             try
             {
@@ -205,7 +205,7 @@ namespace CaclulatorDemo
             }
             //btnSub.Enabled = enable;
         }
-        enum Operation
+        public enum Operation
         {
             Add,
             Sub,
@@ -237,6 +237,21 @@ namespace CaclulatorDemo
             PreCheck_ButtonClick();
             txtDisplay.Text += (sender as Button).Text;
             decimalPointActive = true;
+        }
+
+        public TextBox getTextBox()
+        {
+            return this.txtDisplay;
+        }
+
+        public void setTextBoxContent(string content)
+        {
+            this.txtDisplay.Text = content;
+        }
+
+        private int test()
+        {
+            return 3;
         }
     }
 }
